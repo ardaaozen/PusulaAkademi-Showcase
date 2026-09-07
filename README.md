@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="assets/pusula-logo.png" width="150" alt="Pusula Akademi logo">
-</p>
+![Pusula Akademi hero](assets/pusula-akademi-hero.png)
 
 <h1 align="center">Pusula Akademi Yönetim Sistemi</h1>
 
@@ -8,11 +6,24 @@
   <strong>Öğrenci, akademik süreç ve finans operasyonlarını tek merkezde buluşturan Windows masaüstü ERP çözümü.</strong>
 </p>
 
-## Ürün hakkında
+<p align="center">
+  <img alt=".NET 8" src="https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white">
+  <img alt="C#" src="https://img.shields.io/badge/C%23-WPF-239120?logo=csharp&logoColor=white">
+  <img alt="SQL Server" src="https://img.shields.io/badge/SQL%20Server-Data-CC2927?logo=microsoftsqlserver&logoColor=white">
+  <img alt="Windows" src="https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows&logoColor=white">
+  <img alt="Repository scope" src="https://img.shields.io/badge/Repository-Product%20Showcase-C89B3C">
+</p>
 
-Pusula Akademi Yönetim Sistemi; dershane, kurs ve etüt merkezlerinin günlük operasyonlarını daha düzenli takip edebilmesi için geliştirilen kurum içi bir yönetim uygulamasıdır. Öğrenci kaydından ders programına, sınav sonuçlarından ödeme ve gider raporlarına kadar temel süreçleri ortak bir çalışma alanında birleştirir.
+## 30 saniyede proje
 
-## Başlıca özellikler
+| | |
+| --- | --- |
+| **Problem** | Dershane, kurs ve etüt merkezlerinde öğrenci, ders, sınav ve finans kayıtlarının farklı araçlarda dağınık kalması. |
+| **Çözüm** | Günlük kurum operasyonlarını tek Windows uygulamasında birleştiren, rol odaklı ve SQL Server destekli yönetim sistemi. |
+| **Benim rolüm** | Ürün kapsamı, WPF/XAML arayüzü, C# iş akışları, SQL Server entegrasyonu ve Windows dağıtım hazırlığı. |
+| **Teknolojiler** | .NET 8, C#, WPF, XAML, Microsoft SQL Server ve Microsoft.Data.SqlClient. |
+
+## Ürün kapsamı
 
 - Öğrenci, veli ve kayıt durumu yönetimi
 - Sınıf ve ders havuzu oluşturma
@@ -20,30 +31,54 @@ Pusula Akademi Yönetim Sistemi; dershane, kurs ve etüt merkezlerinin günlük 
 - Sınav, not ve başarı sıralaması takibi
 - Taksit planı, ödeme yöntemi ve gecikme takibi
 - Gider, kasa, tahsilat ve dönemsel performans raporları
-- Rol tabanlı öğretmen, yetkili ve yönetici deneyimi
+- Öğretmen, yetkili ve yönetici rollerine göre farklılaşan deneyim
 - CSV dışa aktarma, karne görseli oluşturma ve yazdırma
 - Yerel ağ üzerinde SQL Server ile çok kullanıcılı çalışma
 - Veritabanı yedekleme akışı
 
-## Teknik yaklaşım
+## Sistem görünümü
 
-- **Platform:** Windows desktop
-- **Framework:** .NET 8, C#, WPF ve XAML
-- **Data:** Microsoft SQL Server
-- **UI:** Tek uygulama içinde rol odaklı operasyon ekranları
-- **Deployment:** Kurum içi Windows dağıtımı ve yerel ağ bağlantısı
+```mermaid
+flowchart LR
+    A[WPF / XAML arayüzü] --> B[C# iş akışları]
+    B --> C[Microsoft.Data.SqlClient]
+    C --> D[(SQL Server)]
+    B --> E[CSV ve PNG çıktıları]
+    B --> F[Yazdırma]
+    B --> G[Veritabanı yedekleme]
+```
+
+## Mühendislik yaklaşımı
+
+- **Tek uygulama, ortak operasyon alanı:** Akademik ve finans süreçleri aynı masaüstü deneyiminde birleştirildi.
+- **Rol odaklı kullanım:** Öğretmen, yetkili ve yönetici işlemleri arayüz seviyesinde ayrıştırıldı.
+- **Kurum içi çalışma:** Uygulama, Windows cihazları ve yerel ağdaki SQL Server kurulumu için tasarlandı.
+- **Raporlanabilir veriler:** Tahsilat, gecikme, gider ve başarı verileri kullanıcıya dönük çıktılara dönüştürüldü.
+- **Güvenli yayın ayrımı:** Kaynak kodu ve operasyon yapılandırması private; bu depo yalnızca doğrulanabilir ürün kapsamını sunuyor.
+
+## Teknik değerlendirme
+
+İlk GitHub aktarımı öncesinde gömülü bağlantı ve kurulum bilgileri kaynak kodundan çıkarıldı, paylaşılmaması gereken derleme/veritabanı dosyaları kapsam dışına alındı ve kullanıcı girdisi alan kritik sorgular parametreli hâle getirildi.
+
+Sıradaki mühendislik hedefleri:
+
+- WPF ekranlarını MVVM ve servis katmanlarına ayırmak
+- Veritabanı işlemlerini asenkron hâle getirmek
+- Kimlik doğrulama ve yetkilendirmeyi veri/servis katmanında güçlendirmek
+- Ödeme, raporlama ve yetki akışları için otomatik testler eklemek
+- CI ile derleme ve test doğrulaması yapmak
+
+## CV ve LinkedIn
+
+Kopyala-yapıştır hazır Türkçe ve İngilizce proje açıklamaları için [CV_ENTRY.md](docs/CV_ENTRY.md) dosyasına bakabilirsiniz.
 
 ## Veri ve gizlilik
 
-Uygulama; öğrenci, veli ve finans kayıtları gibi hassas bilgilerle çalışabildiği için üretim kaynak kodu, veritabanı, yedekler ve erişim bilgileri private altyapıda tutulur. Bu public depo yalnızca ürünün kapsamını ve teknik yönünü tanıtır; gerçek kurum verisi veya üretim kimlik bilgisi içermez.
+Uygulama; öğrenci, veli ve finans kayıtları gibi hassas bilgilerle çalışabildiği için üretim kaynak kodu, veritabanı, yedekler ve erişim bilgileri private altyapıda tutulur. Bu public depo gerçek kurum verisi veya üretim kimlik bilgisi içermez.
 
 ## Repository scope
 
 This repository is a public product showcase. The production source code and operational configuration are maintained in a separate private repository.
-
-## Durum
-
-Pusula Akademi Yönetim Sistemi aktif geliştirme ve kurum içi kullanım hazırlığı kapsamındadır.
 
 ---
 
