@@ -1,4 +1,4 @@
-![Pusula Akademi hero](assets/pusula-akademi-hero.png)
+![Pusula Akademi](assets/pusula-akademi-hero.png)
 
 <h1 align="center">Pusula Akademi Yönetim Sistemi</h1>
 
@@ -11,7 +11,7 @@
   <img alt="C#" src="https://img.shields.io/badge/C%23-WPF-239120?logo=csharp&logoColor=white">
   <img alt="SQL Server" src="https://img.shields.io/badge/SQL%20Server-Data-CC2927?logo=microsoftsqlserver&logoColor=white">
   <img alt="Windows" src="https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows&logoColor=white">
-  <img alt="Repository scope" src="https://img.shields.io/badge/Repository-Product%20Showcase-C89B3C">
+  <img alt="Product" src="https://img.shields.io/badge/Product-Education%20ERP-C89B3C">
 </p>
 
 ## 30 saniyede proje
@@ -38,7 +38,7 @@
 
 ## Sistem görünümü
 
-```mermaid
+~~~mermaid
 flowchart LR
     A[WPF / XAML arayüzü] --> B[C# iş akışları]
     B --> C[Microsoft.Data.SqlClient]
@@ -46,40 +46,22 @@ flowchart LR
     B --> E[CSV ve PNG çıktıları]
     B --> F[Yazdırma]
     B --> G[Veritabanı yedekleme]
-```
+~~~
 
 ## Mühendislik yaklaşımı
 
-- **Tek uygulama, ortak operasyon alanı:** Akademik ve finans süreçleri aynı masaüstü deneyiminde birleştirildi.
-- **Rol odaklı kullanım:** Öğretmen, yetkili ve yönetici işlemleri arayüz seviyesinde ayrıştırıldı.
-- **Kurum içi çalışma:** Uygulama, Windows cihazları ve yerel ağdaki SQL Server kurulumu için tasarlandı.
-- **Raporlanabilir veriler:** Tahsilat, gecikme, gider ve başarı verileri kullanıcıya dönük çıktılara dönüştürüldü.
-- **Güvenli yayın ayrımı:** Kaynak kodu ve operasyon yapılandırması private; bu depo yalnızca doğrulanabilir ürün kapsamını sunuyor.
+- **Tek operasyon alanı:** Akademik ve finans süreçleri aynı masaüstü deneyiminde birleşir.
+- **Rol odaklı kullanım:** Öğretmen, yetkili ve yönetici işlemleri arayüz seviyesinde ayrıştırılır.
+- **Kurum içi çalışma:** Windows cihazları ve yerel ağdaki SQL Server kurulumu hedeflenir.
+- **Raporlanabilir veriler:** Tahsilat, gecikme, gider ve başarı kayıtları kullanıcıya dönük çıktılara dönüşür.
+- **Parametreli veri erişimi:** Kullanıcı girdisi alan sorgularda güvenli parametre kullanımı esas alınır.
 
-## Teknik değerlendirme
-
-İlk GitHub aktarımı öncesinde gömülü bağlantı ve kurulum bilgileri kaynak kodundan çıkarıldı, paylaşılmaması gereken derleme/veritabanı dosyaları kapsam dışına alındı ve kullanıcı girdisi alan kritik sorgular parametreli hâle getirildi.
-
-Sıradaki mühendislik hedefleri:
+## Gelişim rotası
 
 - WPF ekranlarını MVVM ve servis katmanlarına ayırmak
 - Veritabanı işlemlerini asenkron hâle getirmek
 - Kimlik doğrulama ve yetkilendirmeyi veri/servis katmanında güçlendirmek
 - Ödeme, raporlama ve yetki akışları için otomatik testler eklemek
 - CI ile derleme ve test doğrulaması yapmak
-
-## CV ve LinkedIn
-
-Kopyala-yapıştır hazır Türkçe ve İngilizce proje açıklamaları için [CV_ENTRY.md](docs/CV_ENTRY.md) dosyasına bakabilirsiniz.
-
-## Veri ve gizlilik
-
-Uygulama; öğrenci, veli ve finans kayıtları gibi hassas bilgilerle çalışabildiği için üretim kaynak kodu, veritabanı, yedekler ve erişim bilgileri private altyapıda tutulur. Bu public depo gerçek kurum verisi veya üretim kimlik bilgisi içermez.
-
-## Repository scope
-
-This repository is a public product showcase. The production source code and operational configuration are maintained in a separate private repository.
-
----
 
 © 2026 Pusula Akademi. Tüm hakları saklıdır.
